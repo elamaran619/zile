@@ -17,3 +17,6 @@ Output: `[serviceName] keyValue`
 + Add source of key/value
 + Test all patterns and add more
 + Removing duplicate results
+
+### Issues / Pull Requests
+I'm waiting your pull requests or bug reports impatiently. 
