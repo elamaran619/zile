@@ -19,4 +19,4 @@ Output: `[serviceName] keyValue`
 + Removing duplicate results
 
 ### Issues / Pull Requests
-I'm waiting your pull requests or bug reports impatiently. 
+I'm waiting for your pull requests or bug reports impatiently. 
