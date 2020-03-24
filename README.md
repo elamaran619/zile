@@ -1,5 +1,6 @@
 # Zile
 Extract API keys from file or url using by magic of python and regex.
+
 [![asciicast](https://asciinema.org/a/9AHGuvFiPg2ET2Cw8A1EKBRG8.svg)](https://asciinema.org/a/9AHGuvFiPg2ET2Cw8A1EKBRG8)
 
 ### Usage
