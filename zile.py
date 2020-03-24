@@ -82,15 +82,20 @@ if "--file" in args: # if file parameter has given as argument
         totalFiles+=tempFiles # and add them to totalFiles array
     for file in totalFiles: # for each files
         try:
-            read = open(file, "r", encoding='utf8').read() # read them
+            read = open(file, "rb", encoding='utf-8').read() # read them
             extract(read) # and call extract function
         except Exception: # if it gives error
             pass # just ignore it
 elif "--request" in args: # if request parameter has given as argument
-    threadPool = ThreadPoolExecutor(max_workers=settings["threads"])
-    pipeText = sys.stdin.read() # read urls
-    for r in splitArgs(pipeText):
-        threadPool.submit(fromUrl,r)
+    try:
+        threadPool = ThreadPoolExecutor(max_workers=settings["threads"])
+        pipeText = sys.stdin.read() # read urls
+        for r in splitArgs(pipeText):
+            threadPool.submit(fromUrl,r)
+    except UnicodeDecodeError as e:
+        print("[error] binary files are not supported yet.")
 else: # if none of them has given
-    pipeText = sys.stdin.read() # just read data from pipe
-    extract(str(pipeText)) # and call extract function
+    try:
+        extract(str(sys.stdin.read()))
+    except UnicodeDecodeError as e:
+        print("[error] binary files are not supported yet.")
